@@ -2,15 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/expo"
+      "src": "web-build/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
+    { "src": "/(.*)", "dest": "/web-build/$1" }
   ],
-  "outputDirectory": "dist"
+  "outputDirectory": "web-build"  // Specify the correct output directory
 }
